@@ -1,0 +1,46 @@
+*{ 
+    font-family: Arial, sans-serif; 
+    margin: 0 auto;
+}
+
+#janelaJogo{
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #c1ffbe;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#janelaJogo input{
+    border: 1px solid #141a13;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#janelaJogo button{
+    background-color: #6ac25c;
+    border: 1px solid #141a13;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+#janelaJogo button:hover{
+    background-color: #c2e4bc;
+}
+
+#mensagem { 
+    margin-top: 10px; 
+    font-weight: bold;
+    text-align: center;
+}
+
+#tentativas{
+    margin-top: 20px;
+}
