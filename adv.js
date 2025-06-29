@@ -1,7 +1,19 @@
 // Inicialização do jogo
-const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+let numeroSecreto;
 const maxTentativas = 10;
-let tentativasRestantes = maxTentativas;
+let tentativasRestantes;
+
+function iniciarJogo() {
+    numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    tentativasRestantes = maxTentativas;
+    document.getElementById('palpite').disabled = false;
+    document.querySelector('button').disabled = false;
+    document.getElementById('mensagem').textContent = '';
+    document.getElementById('tentativas').textContent = `Tentativas restantes: ${tentativasRestantes}`;
+    document.getElementById('palpite').value = '';
+    document.getElementById('palpite').focus();
+    }
+
 
 // Processamento
 function verificarPalpite() {
@@ -21,9 +33,11 @@ function verificarPalpite() {
     if (palpite === numeroSecreto) {
         mensagem.textContent = `Você acertou! O número secreto era ${numeroSecreto}.`;
         desativarJogo();
+
     } else if (tentativasRestantes === 0) {
         mensagem.textContent = `Você perdeu! O número secreto era ${numeroSecreto}.`;
         desativarJogo();
+
     } else if (palpite < numeroSecreto) {
         mensagem.textContent = "O número secreto é **maior**.";
     } else {
@@ -40,3 +54,10 @@ function desativarJogo() {
     document.getElementById('palpite').disabled = true;
     document.querySelector('button').disabled = true;
 }
+
+function reiniciarJogo() {
+    iniciarJogo();
+}
+
+// Iniciar o jogo ao carregar a página
+    window.onload = iniciarJogo;
